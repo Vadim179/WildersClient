@@ -1,0 +1,47 @@
+import PLAYER_BODY from "Assets/player_body.svg";
+import FLOWER_L from "Assets/flower_l.svg";
+import FLOWER_S from "Assets/flower_s.svg";
+import HILL_L from "Assets/hill_l.svg";
+import HILL_S from "Assets/hill_s.svg";
+import PEBBLE_L from "Assets/pebble_l.svg";
+import PEBBLE_M from "Assets/pebble_m.svg";
+import PEBBLE_S from "Assets/pebble_s.svg";
+import COPPER_L from "Assets/copper_l.svg";
+import COPPER_S from "Assets/copper_s.svg";
+import GOLD_L from "Assets/gold_l.svg";
+import GOLD_S from "Assets/gold_s.svg";
+import IRON_L from "Assets/iron_l.svg";
+import IRON_S from "Assets/iron_s.svg";
+import ROCK_L from "Assets/rock_l.svg";
+import ROCK_S from "Assets/rock_s.svg";
+import TREE_L1 from "Assets/tree_l1.svg";
+import TREE_L2 from "Assets/tree_l2.svg";
+import TREE_M1 from "Assets/tree_m1.svg";
+import TREE_M2 from "Assets/tree_m2.svg";
+import TREE_S1 from "Assets/tree_s1.svg";
+import TREE_S2 from "Assets/tree_s2.svg";
+
+export default function preload() {
+  this.load.svg("player_body", PLAYER_BODY);
+  this.load.svg("flower_l", FLOWER_L);
+  this.load.svg("flower_s", FLOWER_S);
+  this.load.svg("pebble_l", PEBBLE_L);
+  this.load.svg("pebble_m", PEBBLE_M);
+  this.load.svg("pebble_s", PEBBLE_S);
+  this.load.svg("hill_l", HILL_L);
+  this.load.svg("hill_s", HILL_S);
+  this.load.svg("copper_l", COPPER_L);
+  this.load.svg("copper_s", COPPER_S);
+  this.load.svg("gold_l", GOLD_L);
+  this.load.svg("gold_s", GOLD_S);
+  this.load.svg("iron_l", IRON_L);
+  this.load.svg("iron_s", IRON_S);
+  this.load.svg("rock_l", ROCK_L);
+  this.load.svg("rock_s", ROCK_S);
+  this.load.svg("tree_l1", TREE_L1);
+  this.load.svg("tree_l2", TREE_L2);
+  this.load.svg("tree_m1", TREE_M1);
+  this.load.svg("tree_m2", TREE_M2);
+  this.load.svg("tree_s1", TREE_S1);
+  this.load.svg("tree_s2", TREE_S2);
+}
