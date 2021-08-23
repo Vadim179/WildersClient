@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b3e44085.chunk.css",
+    "main.js": "/static/js/main.2c81e0e2.chunk.js",
+    "main.js.map": "/static/js/main.2c81e0e2.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.7545a8a1.js",
+    "runtime-main.js.map": "/static/js/runtime-main.7545a8a1.js.map",
+    "static/js/2.d2de80c9.chunk.js": "/static/js/2.d2de80c9.chunk.js",
+    "static/js/2.d2de80c9.chunk.js.map": "/static/js/2.d2de80c9.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.b3e44085.chunk.css.map": "/static/css/main.b3e44085.chunk.css.map",
+    "static/js/2.d2de80c9.chunk.js.LICENSE.txt": "/static/js/2.d2de80c9.chunk.js.LICENSE.txt",
+    "static/media/copper_l.cf7073a3.svg": "/static/media/copper_l.cf7073a3.svg",
+    "static/media/copper_s.dcd76a60.svg": "/static/media/copper_s.dcd76a60.svg",
+    "static/media/flower_l.daeb81d9.svg": "/static/media/flower_l.daeb81d9.svg",
+    "static/media/flower_s.f878ed27.svg": "/static/media/flower_s.f878ed27.svg",
+    "static/media/gold_l.5a0ed2f3.svg": "/static/media/gold_l.5a0ed2f3.svg",
+    "static/media/gold_s.9637f5d4.svg": "/static/media/gold_s.9637f5d4.svg",
+    "static/media/hill_l.50d2ee12.svg": "/static/media/hill_l.50d2ee12.svg",
+    "static/media/hill_s.8d6a8490.svg": "/static/media/hill_s.8d6a8490.svg",
+    "static/media/iron_l.f69a6460.svg": "/static/media/iron_l.f69a6460.svg",
+    "static/media/iron_s.be8ae255.svg": "/static/media/iron_s.be8ae255.svg",
+    "static/media/pebble_l.336c6dd3.svg": "/static/media/pebble_l.336c6dd3.svg",
+    "static/media/pebble_m.5b50f050.svg": "/static/media/pebble_m.5b50f050.svg",
+    "static/media/pebble_s.ce6a126a.svg": "/static/media/pebble_s.ce6a126a.svg",
+    "static/media/player_body.3e91f005.svg": "/static/media/player_body.3e91f005.svg",
+    "static/media/rock_l.ed28c7de.svg": "/static/media/rock_l.ed28c7de.svg",
+    "static/media/rock_s.6fed8362.svg": "/static/media/rock_s.6fed8362.svg",
+    "static/media/tree_l1.15d3fc32.svg": "/static/media/tree_l1.15d3fc32.svg",
+    "static/media/tree_l2.be06cd57.svg": "/static/media/tree_l2.be06cd57.svg",
+    "static/media/tree_m1.2736f6ac.svg": "/static/media/tree_m1.2736f6ac.svg",
+    "static/media/tree_m2.6fc81ff1.svg": "/static/media/tree_m2.6fc81ff1.svg",
+    "static/media/tree_s1.e2a9cfdd.svg": "/static/media/tree_s1.e2a9cfdd.svg",
+    "static/media/tree_s2.5745e47b.svg": "/static/media/tree_s2.5745e47b.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7545a8a1.js",
+    "static/js/2.d2de80c9.chunk.js",
+    "static/css/main.b3e44085.chunk.css",
+    "static/js/main.2c81e0e2.chunk.js"
+  ]
+}
