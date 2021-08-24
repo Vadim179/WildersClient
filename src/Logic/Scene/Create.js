@@ -1,4 +1,5 @@
 import doInitializeInput from "Config/KeyboardInput";
+import doInitializeUI from "GUI";
 
 // INFO _ PLAYER _
 import Player from "Entities/Ecosystem/Player";
@@ -30,7 +31,9 @@ import SmallTree1 from "Entities/Environment/Trees/SmallTree1";
 export default function create() {
   this.player = new Player(this, 0, 0);
   this.camera = new Camera(this, 0, 0);
+
   doInitializeInput.call(this);
+  doInitializeUI.call(this);
 
   new LargeHill(this, 0, 0);
   new SmallHill(this, -200, 200);

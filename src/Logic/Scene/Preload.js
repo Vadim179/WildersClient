@@ -20,6 +20,7 @@ import TREE_M1 from "Assets/tree_m1.svg";
 import TREE_M2 from "Assets/tree_m2.svg";
 import TREE_S1 from "Assets/tree_s1.svg";
 import TREE_S2 from "Assets/tree_s2.svg";
+import INV_SLOT from "Assets/inv_slot.svg";
 
 export default function preload() {
   this.load.svg("player_body", PLAYER_BODY);
@@ -44,4 +45,5 @@ export default function preload() {
   this.load.svg("tree_m2", TREE_M2);
   this.load.svg("tree_s1", TREE_S1);
   this.load.svg("tree_s2", TREE_S2);
+  this.load.svg("inv_slot", INV_SLOT);
 }
