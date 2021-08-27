@@ -5,7 +5,7 @@ import InventorySlot from "./Inventory.Slot";
 
 class Inventory {
   constructor() {
-    this.slots = new Array(8).fill(new InventorySlot());
+    this.slots = new Array(8).fill(0).map(() => new InventorySlot());
   }
 
   /**

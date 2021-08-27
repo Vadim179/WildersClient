@@ -9,6 +9,7 @@ class InventoryUI {
   constructor(scene) {
     validate("O", arguments);
     this.inventory = new Inventory();
+
     this.scene = scene;
     this.doInitializeSlots();
   }
@@ -16,11 +17,13 @@ class InventoryUI {
   /**
    * @param {object} slot
    * @param {number} index
+   * @param {object[]} slots
    */
   doCreateSlot = (_, index, slots) => {
     const count = slots.length;
     const x = (window.innerWidth - count * 120) / 2 + index * 120 + 60;
     const y = window.innerHeight - 100;
+
     new InventorySlotUI(this.scene, x, y);
   };
 
