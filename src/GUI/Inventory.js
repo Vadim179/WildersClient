@@ -28,7 +28,7 @@ class Inventory {
     if (item instanceof Item === false) return;
 
     const slot = this.slots.find((slot) => {
-      return slot.item == null || slot.item.ID === item.ID;
+      return slot.item == null || slot.item.name === item.name;
     });
     if (slot) slot.doPushItem(item, count);
   }
@@ -41,7 +41,7 @@ class Inventory {
     validate("ON", arguments);
     if (item instanceof Item === false) return;
 
-    const slot = this.slots.find((slot) => slot.item.ID === item.ID);
+    const slot = this.slots.find((slot) => slot.item.name === item.name);
     if (slot) slot.doRemoveItem(count);
   }
 

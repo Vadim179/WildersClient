@@ -33,6 +33,7 @@ import InventorySlot from "Assets/UI/InventorySlot.svg";
 
 // * ITEMS
 import WoodItem from "Assets/Items/WoodItem.svg";
+import StoneItem from "Assets/Items/StoneItem.svg";
 
 export default function preload() {
   // * ENTITIES / PLAYER
@@ -70,4 +71,5 @@ export default function preload() {
 
   // * ITEMS
   this.load.svg("WOOD_ITEM", WoodItem);
+  this.load.svg("STONE_ITEM", StoneItem);
 }
