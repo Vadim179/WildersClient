@@ -8,7 +8,7 @@ class Text extends Phaser.GameObjects.Text {
    * @param {string} text
    */
   constructor(scene, x, y, text = "") {
-    const style = { fontSize: 20, color: "#ffffff" };
+    const style = { fontSize: 12, color: "#ffffff" };
     super(scene, x, y, text, style);
 
     this.setDepth(200);

@@ -61,8 +61,8 @@ class Inventory {
     validate("N", arguments);
 
     const count = this.sCount;
-    const x = (window.innerWidth - count * 120) / 2 + index * 120 + 60;
-    const y = window.innerHeight - 100;
+    const x = (window.innerWidth - count * 80) / 2 + index * 80 + 40;
+    const y = window.innerHeight - 40;
 
     this.slots.push(new InventorySlot(this.scene, x, y));
   }

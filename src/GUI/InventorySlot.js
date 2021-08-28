@@ -16,12 +16,14 @@ class InventorySlot extends Entity {
     this.setScrollFactor(0);
     this.setDepth(100);
     this.setAlpha(0.9);
+    this.setScale(0.7);
 
     this.item = null;
     this.count = 0;
 
     this.text = new Text(scene, x, y + 10);
     this.icon = new Image(scene, x, y);
+    this.icon.setScale(0.7);
     this._doUpdate();
   }
 
@@ -82,7 +84,7 @@ class InventorySlot extends Entity {
     else text.setText("x" + count);
 
     const length = text.text.length;
-    text.setX(x + 30 - length * 11);
+    text.setX(x + 30 - length * 8.5);
 
     if (count > 1 && text.alpha === 0) {
       text.setAlpha(1);
