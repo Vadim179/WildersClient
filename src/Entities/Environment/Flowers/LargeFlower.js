@@ -9,7 +9,7 @@ class LargeFlower extends Entity {
    */
   constructor(scene, x, y) {
     validate("ONN", arguments);
-    super(scene, x, y, "flower_l");
+    super(scene, x, y, "LARGE_FLOWER");
     this.setDepth(1);
   }
 }

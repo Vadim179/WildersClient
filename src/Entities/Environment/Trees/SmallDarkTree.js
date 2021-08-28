@@ -9,7 +9,7 @@ class SmallTree2 extends RigidEntity {
    */
   constructor(scene, x, y) {
     validate("ONN", arguments);
-    super(scene, x, y, "tree_s2");
+    super(scene, x, y, "SMALL_DARK_TREE");
     this.setDepth(30);
   }
 

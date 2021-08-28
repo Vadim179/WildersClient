@@ -9,7 +9,7 @@ class SmallGold extends RigidEntity {
    */
   constructor(scene, x, y) {
     validate("ONN", arguments);
-    super(scene, x, y, "gold_s");
+    super(scene, x, y, "SMALL_GOLD");
     this.setDepth(10);
   }
 

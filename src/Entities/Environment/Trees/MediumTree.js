@@ -1,7 +1,7 @@
 import validate from "aproba";
 import RigidEntity from "Entities/RigidEntity";
 
-class MediumTree2 extends RigidEntity {
+class MediumTree1 extends RigidEntity {
   /**
    * @param {object} scene
    * @param {number} x
@@ -9,7 +9,7 @@ class MediumTree2 extends RigidEntity {
    */
   constructor(scene, x, y) {
     validate("ONN", arguments);
-    super(scene, x, y, "tree_m2");
+    super(scene, x, y, "MEDIUM_TREE");
     this.setDepth(40);
   }
 
@@ -21,4 +21,4 @@ class MediumTree2 extends RigidEntity {
   }
 }
 
-export default MediumTree2;
+export default MediumTree1;

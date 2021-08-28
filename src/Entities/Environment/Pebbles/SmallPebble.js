@@ -9,7 +9,7 @@ class SmallPebble extends Entity {
    */
   constructor(scene, x, y) {
     validate("ONN", arguments);
-    super(scene, x, y, "pebble_s");
+    super(scene, x, y, "SMALL_PEBBLE");
     this.setDepth(1);
   }
 }

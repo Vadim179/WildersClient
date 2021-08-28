@@ -9,7 +9,7 @@ class LargeCopper extends RigidEntity {
    */
   constructor(scene, x, y) {
     validate("ONN", arguments);
-    super(scene, x, y, "copper_l");
+    super(scene, x, y, "LARGE_COPPER");
     this.setDepth(20);
   }
 

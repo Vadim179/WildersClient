@@ -12,7 +12,7 @@ class Player extends RigidEntity {
   constructor(scene, x, y) {
     validate("ONN", arguments);
 
-    super(scene, x, y, "player_body");
+    super(scene, x, y, "PLAYER_BODY");
     this.setDepth(25);
 
     this.cSeeker = new CursorSeeker(this, scene);

@@ -9,7 +9,7 @@ class LargeIron extends RigidEntity {
    */
   constructor(scene, x, y) {
     validate("ONN", arguments);
-    super(scene, x, y, "iron_l");
+    super(scene, x, y, "LARGE_IRON");
     this.setDepth(20);
   }
 

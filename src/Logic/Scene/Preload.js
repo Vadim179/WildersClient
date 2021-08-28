@@ -1,49 +1,73 @@
-import PLAYER_BODY from "Assets/player_body.svg";
-import FLOWER_L from "Assets/flower_l.svg";
-import FLOWER_S from "Assets/flower_s.svg";
-import HILL_L from "Assets/hill_l.svg";
-import HILL_S from "Assets/hill_s.svg";
-import PEBBLE_L from "Assets/pebble_l.svg";
-import PEBBLE_M from "Assets/pebble_m.svg";
-import PEBBLE_S from "Assets/pebble_s.svg";
-import COPPER_L from "Assets/copper_l.svg";
-import COPPER_S from "Assets/copper_s.svg";
-import GOLD_L from "Assets/gold_l.svg";
-import GOLD_S from "Assets/gold_s.svg";
-import IRON_L from "Assets/iron_l.svg";
-import IRON_S from "Assets/iron_s.svg";
-import ROCK_L from "Assets/rock_l.svg";
-import ROCK_S from "Assets/rock_s.svg";
-import TREE_L1 from "Assets/tree_l1.svg";
-import TREE_L2 from "Assets/tree_l2.svg";
-import TREE_M1 from "Assets/tree_m1.svg";
-import TREE_M2 from "Assets/tree_m2.svg";
-import TREE_S1 from "Assets/tree_s1.svg";
-import TREE_S2 from "Assets/tree_s2.svg";
-import INV_SLOT from "Assets/inv_slot.svg";
+// * ENTITIES / PLAYER
+import PlayerBody from "Assets/Beings/Player/PlayerBody.svg";
+
+// * DECORS
+import LargeFlower from "Assets/Decors/LargeFlower.svg";
+import SmallFlower from "Assets/Decors/SmallFlower.svg";
+import LargeHill from "Assets/Decors/LargeHill.svg";
+import SmallHill from "Assets/Decors/SmallHill.svg";
+import LargePebble from "Assets/Decors/LargePebble.svg";
+import MediumPebble from "Assets/Decors/MediumPebble.svg";
+import SmallPebble from "Assets/Decors/SmallPebble.svg";
+
+// * RESOURCES / ORES
+import LargeCopper from "Assets/Resources/Ores/LargeCopper.svg";
+import SmallCopper from "Assets/Resources/Ores/SmallCopper.svg";
+import LargeGold from "Assets/Resources/Ores/LargeGold.svg";
+import SmallGold from "Assets/Resources/Ores/SmallGold.svg";
+import LargeIron from "Assets/Resources/Ores/LargeIron.svg";
+import SmallIron from "Assets/Resources/Ores/SmallIron.svg";
+import LargeRock from "Assets/Resources/Ores/LargeRock.svg";
+import SmallRock from "Assets/Resources/Ores/SmallRock.svg";
+
+// * RESOURCES / TREES
+import LargeTree from "Assets/Resources/Trees/LargeTree.svg";
+import MediumTree from "Assets/Resources/Trees/MediumTree.svg";
+import SmallTree from "Assets/Resources/Trees/SmallTree.svg";
+import LargeDarkTree from "Assets/Resources/Trees/LargeDarkTree.svg";
+import MediumDarkTree from "Assets/Resources/Trees/MediumDarkTree.svg";
+import SmallDarkTree from "Assets/Resources/Trees/SmallDarkTree.svg";
+
+// * UI
+import InventorySlot from "Assets/UI/InventorySlot.svg";
+
+// * ITEMS
+import WoodItem from "Assets/Items/WoodItem.svg";
 
 export default function preload() {
-  this.load.svg("player_body", PLAYER_BODY);
-  this.load.svg("flower_l", FLOWER_L);
-  this.load.svg("flower_s", FLOWER_S);
-  this.load.svg("pebble_l", PEBBLE_L);
-  this.load.svg("pebble_m", PEBBLE_M);
-  this.load.svg("pebble_s", PEBBLE_S);
-  this.load.svg("hill_l", HILL_L);
-  this.load.svg("hill_s", HILL_S);
-  this.load.svg("copper_l", COPPER_L);
-  this.load.svg("copper_s", COPPER_S);
-  this.load.svg("gold_l", GOLD_L);
-  this.load.svg("gold_s", GOLD_S);
-  this.load.svg("iron_l", IRON_L);
-  this.load.svg("iron_s", IRON_S);
-  this.load.svg("rock_l", ROCK_L);
-  this.load.svg("rock_s", ROCK_S);
-  this.load.svg("tree_l1", TREE_L1);
-  this.load.svg("tree_l2", TREE_L2);
-  this.load.svg("tree_m1", TREE_M1);
-  this.load.svg("tree_m2", TREE_M2);
-  this.load.svg("tree_s1", TREE_S1);
-  this.load.svg("tree_s2", TREE_S2);
-  this.load.svg("inv_slot", INV_SLOT);
+  // * ENTITIES / PLAYER
+  this.load.svg("PLAYER_BODY", PlayerBody);
+
+  // * DECORS
+  this.load.svg("LARGE_FLOWER", LargeFlower);
+  this.load.svg("SMALL_FLOWER", SmallFlower);
+  this.load.svg("LARGE_HILL", LargeHill);
+  this.load.svg("SMALL_HILL", SmallHill);
+  this.load.svg("LARGE_PEBBLE", LargePebble);
+  this.load.svg("MEDIUM_PEBBLE", MediumPebble);
+  this.load.svg("SMALL_PEBBLE", SmallPebble);
+
+  // * RESOURCES / ORES
+  this.load.svg("LARGE_COPPER", LargeCopper);
+  this.load.svg("SMALL_COPPER", SmallCopper);
+  this.load.svg("LARGE_GOLD", LargeGold);
+  this.load.svg("SMALL_GOLD", SmallGold);
+  this.load.svg("LARGE_IRON", LargeIron);
+  this.load.svg("SMALL_IRON", SmallIron);
+  this.load.svg("LARGE_ROCK", LargeRock);
+  this.load.svg("SMALL_ROCK", SmallRock);
+
+  // * RESOURCES / TREES
+  this.load.svg("LARGE_TREE", LargeTree);
+  this.load.svg("LARGE_DARK_TREE", LargeDarkTree);
+  this.load.svg("MEDIUM_TREE", MediumTree);
+  this.load.svg("MEDIUM_DARK_TREE", MediumDarkTree);
+  this.load.svg("SMALL_TREE", SmallTree);
+  this.load.svg("SMALL_DARK_TREE", SmallDarkTree);
+
+  // * UI
+  this.load.svg("INVENTORY_SLOT", InventorySlot);
+
+  // * ITEMS
+  this.load.svg("WOOD_ITEM", WoodItem);
 }

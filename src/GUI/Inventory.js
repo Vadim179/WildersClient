@@ -1,35 +1,83 @@
 import validate from "aproba";
-import Inventory from "Logic/Inventory";
-import InventorySlotUI from "./InventorySlot";
+import INITIAL_ITEMS from "Config/InitialItems";
 
-class InventoryUI {
+import Item from "Items/Item";
+import InventorySlot from "./InventorySlot";
+
+class Inventory {
   /**
    * @param {object} scene
    */
   constructor(scene) {
     validate("O", arguments);
-    this.inventory = new Inventory();
 
     this.scene = scene;
-    this.doInitializeSlots();
+    this.slots = [];
+    this.sCount = 8;
+
+    this._doInitializeSlots();
+    this._doSetInitialItems();
   }
 
   /**
-   * @param {object} slot
-   * @param {number} index
-   * @param {object[]} slots
+   * @param {object} item
+   * @param {number} count
    */
-  doCreateSlot = (_, index, slots) => {
-    const count = slots.length;
+  doPushItem(item, count) {
+    validate("ON", arguments);
+    if (item instanceof Item === false) return;
+
+    const slot = this.slots.find((slot) => {
+      return slot.item == null || slot.item.ID === item.ID;
+    });
+    if (slot) slot.doPushItem(item, count);
+  }
+
+  /**
+   * @param {object} item
+   * @param {number} count
+   */
+  doRemoveItem(item, count) {
+    validate("ON", arguments);
+    if (item instanceof Item === false) return;
+
+    const slot = this.slots.find((slot) => slot.item.ID === item.ID);
+    if (slot) slot.doRemoveItem(count);
+  }
+
+  /**
+   * @param {number} count
+   */
+  doPushSlots(count) {
+    validate("N", arguments);
+    const slots = new Array(count).fill(0).map(() => new InventorySlot());
+    this.slots = [...this.slots, slots];
+  }
+
+  /**
+   * @param {number} index
+   */
+  _doCreateSlot(index) {
+    validate("N", arguments);
+
+    const count = this.sCount;
     const x = (window.innerWidth - count * 120) / 2 + index * 120 + 60;
     const y = window.innerHeight - 100;
 
-    new InventorySlotUI(this.scene, x, y);
-  };
+    this.slots.push(new InventorySlot(this.scene, x, y));
+  }
 
-  doInitializeSlots() {
-    this.inventory.slots.forEach(this.doCreateSlot);
+  _doInitializeSlots() {
+    for (let i = 0; i < this.sCount; i++) {
+      this._doCreateSlot(i);
+    }
+  }
+
+  _doSetInitialItems() {
+    INITIAL_ITEMS.forEach(({ item, count }) => {
+      this.doPushItem(item, count);
+    });
   }
 }
 
-export default InventoryUI;
+export default Inventory;

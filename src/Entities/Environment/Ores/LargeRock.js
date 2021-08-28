@@ -9,7 +9,7 @@ class LargeRock extends RigidEntity {
    */
   constructor(scene, x, y) {
     validate("ONN", arguments);
-    super(scene, x, y, "rock_l");
+    super(scene, x, y, "LARGE_ROCK");
     this.setDepth(20);
   }
 

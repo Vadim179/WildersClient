@@ -1,7 +1,7 @@
-import InventoryUI from "./Inventory";
+import Inventory from "./Inventory";
 
 function doSetupUI() {
-  new InventoryUI(this);
+  new Inventory(this);
 }
 
 export default doSetupUI;

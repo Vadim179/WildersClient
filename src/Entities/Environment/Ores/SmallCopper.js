@@ -9,7 +9,7 @@ class SmallCopper extends RigidEntity {
    */
   constructor(scene, x, y) {
     validate("ONN", arguments);
-    super(scene, x, y, "copper_s");
+    super(scene, x, y, "SMALL_COPPER");
     this.setDepth(10);
   }
 

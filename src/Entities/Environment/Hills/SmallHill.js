@@ -9,7 +9,7 @@ class SmallHill extends Entity {
    */
   constructor(scene, x, y) {
     validate("ONN", arguments);
-    super(scene, x, y, "hill_s");
+    super(scene, x, y, "SMALL_HILL");
     this.setDepth(0);
   }
 }

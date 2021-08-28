@@ -24,9 +24,9 @@ import LargeRock from "Entities/Environment/Ores/LargeRock";
 import SmallRock from "Entities/Environment/Ores/SmallRock";
 
 // INFO _ TREES _
-import LargeTree1 from "Entities/Environment/Trees/LargeTree1";
-import MediumTree2 from "Entities/Environment/Trees/MediumTree2";
-import SmallTree1 from "Entities/Environment/Trees/SmallTree1";
+import LargeTree from "Entities/Environment/Trees/LargeTree";
+import MediumDarkTree from "Entities/Environment/Trees/MediumDarkTree";
+import SmallTree from "Entities/Environment/Trees/SmallTree";
 
 export default function create() {
   this.player = new Player(this, 0, 0);
@@ -45,9 +45,9 @@ export default function create() {
   new MediumPebble(this, 120, -100);
   new SmallPebble(this, 140, 300);
 
-  new SmallTree1(this, -200, -200);
-  new LargeTree1(this, -350, -50);
-  new MediumTree2(this, 250, -100);
+  new SmallTree(this, -200, -200);
+  new LargeTree(this, -350, -50);
+  new MediumDarkTree(this, 250, -100);
   new LargeRock(this, -340, -220);
 
   new SmallRock(this, 200, 120);

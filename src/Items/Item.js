@@ -1,16 +1,15 @@
 import validate from "aproba";
 
-class InventoryItem {
+class Item {
   /**
-   * @param {string} ID
    * @param {string} name
+   * @param {string} texture
    */
-  constructor(ID, name) {
+  constructor(name, texture) {
     validate("SS", arguments);
-
-    this.ID = ID;
     this.name = name;
+    this.texture = texture;
   }
 }
 
-export default InventoryItem;
+export default Item;

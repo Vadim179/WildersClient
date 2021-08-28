@@ -1,4 +1,3 @@
-import validate from "aproba";
 import Phaser from "phaser";
 
 class Text extends Phaser.GameObjects.Text {
@@ -8,8 +7,7 @@ class Text extends Phaser.GameObjects.Text {
    * @param {number} y
    * @param {string} text
    */
-  constructor(scene, x, y, text) {
-    validate("ONNS", arguments);
+  constructor(scene, x, y, text = "") {
     const style = { fontSize: 20, color: "#ffffff" };
     super(scene, x, y, text, style);
 

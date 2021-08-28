@@ -9,7 +9,7 @@ class LargeTree1 extends RigidEntity {
    */
   constructor(scene, x, y) {
     validate("ONN", arguments);
-    super(scene, x, y, "tree_l1");
+    super(scene, x, y, "LARGE_DARK_TREE");
     this.setDepth(50);
   }
 

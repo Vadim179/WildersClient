@@ -9,7 +9,7 @@ class MediumPebble extends Entity {
    */
   constructor(scene, x, y) {
     validate("ONN", arguments);
-    super(scene, x, y, "pebble_m");
+    super(scene, x, y, "MEDIUM_PEBBLE");
     this.setDepth(1);
   }
 }

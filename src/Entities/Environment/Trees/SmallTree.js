@@ -1,7 +1,7 @@
 import validate from "aproba";
 import RigidEntity from "Entities/RigidEntity";
 
-class LargeTree1 extends RigidEntity {
+class SmallTree1 extends RigidEntity {
   /**
    * @param {object} scene
    * @param {number} x
@@ -9,16 +9,16 @@ class LargeTree1 extends RigidEntity {
    */
   constructor(scene, x, y) {
     validate("ONN", arguments);
-    super(scene, x, y, "tree_l2");
-    this.setDepth(50);
+    super(scene, x, y, "SMALL_TREE");
+    this.setDepth(30);
   }
 
   _setCollider() {
     const { scene, body } = this;
     body.setImmovable();
-    body.setCircle(60, 150, 100);
+    body.setCircle(30, 60, 40);
     scene.physics.add.collider(scene.player, this);
   }
 }
 
-export default LargeTree1;
+export default SmallTree1;
