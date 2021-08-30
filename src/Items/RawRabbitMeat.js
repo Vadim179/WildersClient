@@ -1,9 +1,9 @@
 import Item from "./Item";
 
-class RawRabbitItem extends Item {
+class RawRabbitMeatItem extends Item {
   constructor() {
     super("Raw Rabbit", "RAW_RABBIT_ITEM");
   }
 }
 
-export default new RawRabbitItem();
+export default new RawRabbitMeatItem();

@@ -1,9 +1,9 @@
 import Item from "./Item";
 
-class CookedRabbitItem extends Item {
+class CookedRabbitMeatItem extends Item {
   constructor() {
     super("Cooked Rabbit", "COOKED_RABBIT_ITEM");
   }
 }
 
-export default new CookedRabbitItem();
+export default new CookedRabbitMeatItem();
