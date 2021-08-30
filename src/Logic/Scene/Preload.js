@@ -34,6 +34,12 @@ import InventorySlot from "Assets/UI/InventorySlot.svg";
 // * ITEMS
 import WoodItem from "Assets/Items/WoodItem.svg";
 import StoneItem from "Assets/Items/StoneItem.svg";
+import CopperItem from "Assets/Items/CopperItem.svg";
+import GoldItem from "Assets/Items/GoldItem.svg";
+import IronItem from "Assets/Items/IronItem.svg";
+import CookedRabbitItem from "Assets/Items/CookedRabbitItem.svg";
+import RawRabbitItem from "Assets/Items/RawRabbitItem.svg";
+import RabbitFurItem from "Assets/Items/RabbitFurItem.svg";
 
 export default function preload() {
   // * ENTITIES / PLAYER
@@ -72,4 +78,10 @@ export default function preload() {
   // * ITEMS
   this.load.svg("WOOD_ITEM", WoodItem);
   this.load.svg("STONE_ITEM", StoneItem);
+  this.load.svg("COPPER_ITEM", CopperItem);
+  this.load.svg("GOLD_ITEM", GoldItem);
+  this.load.svg("IRON_ITEM", IronItem);
+  this.load.svg("COOKED_RABBIT_ITEM", CookedRabbitItem);
+  this.load.svg("RAW_RABBIT_ITEM", RawRabbitItem);
+  this.load.svg("RABBIT_FUR_ITEM", RabbitFurItem);
 }
