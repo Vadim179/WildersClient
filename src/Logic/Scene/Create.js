@@ -1,4 +1,5 @@
 import doInitializeInput from "Config/KeyboardInput";
+import doInitializeSocketListeners from "Logic/SocketListeners";
 import doInitializeUI from "GUI";
 
 // INFO _ PLAYER _
@@ -32,6 +33,7 @@ export default function create() {
   this.player = new Player(this, 0, 0);
   this.camera = new Camera(this, 0, 0);
 
+  doInitializeSocketListeners.call(this);
   doInitializeInput.call(this);
   doInitializeUI.call(this);
 
