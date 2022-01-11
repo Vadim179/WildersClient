@@ -1,8 +1,13 @@
-import "index.css";
-import Phaser from "phaser";
-import io from "socket.io-client";
-import Config from "Config/Phaser";
+import ReactDOM from "react-dom"
+import React from "react"
+import App from "./App"
 
-const socket = io("http://localhost:8080");
-const _config = Config(socket);
-new Phaser.Game(_config);
+import { BrowserRouter } from "react-router-dom"
+import "index.scss"
+
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById("GUI")
+)
