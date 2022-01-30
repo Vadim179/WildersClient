@@ -1,6 +1,6 @@
-import { useEffect } from "react"
-import PhaserConfig from "Config/Phaser.Config"
-import Phaser from "phaser"
+import { useEffect } from 'react'
+import PhaserConfig from 'Config/Phaser.Config'
+import Phaser from 'phaser'
 
 function GamePage() {
   useEffect(() => {

@@ -1,13 +1,12 @@
-import ReactDOM from "react-dom"
-import React from "react"
-import App from "./App"
+import ReactDOM from 'react-dom'
+import App from './App'
 
-import { BrowserRouter } from "react-router-dom"
-import "index.scss"
+import { ContextProvider } from 'Contexts'
+import './index.scss'
 
 ReactDOM.render(
-  <BrowserRouter>
+  <ContextProvider>
     <App />
-  </BrowserRouter>,
-  document.getElementById("GUI")
+  </ContextProvider>,
+  document.getElementById('root')
 )
