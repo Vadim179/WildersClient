@@ -36,6 +36,7 @@ export function doStreamAngle() {
   setInterval(() => {
     if (_previousAngle !== player.angle) {
       _previousAngle = player.angle
+      // TODO: EMIT ANGLE TO SERVER
     }
-  }, 1000 / 30)
+  }, 1000 / 10)
 }

@@ -33,7 +33,7 @@ export function doStreamPosition() {
     const newPosition = new Position(player.x, player.y)
     if (_previousPosition.compare(newPosition)) return
     _previousPosition = newPosition
-    console.log(newPosition)
+    // TODO: EMIT ANGLE TO SERVER
   }, 1000 / 10)
 }
 
