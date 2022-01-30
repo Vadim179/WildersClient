@@ -1,10 +1,14 @@
-import Phaser from "phaser"
-import { onCreateScene, onPreloadScene, onUpdateScene } from "Scene"
+import Phaser from 'phaser'
+import {
+  onCreateScene,
+  onPreloadScene,
+  onUpdateScene,
+} from 'Scene'
 
 const PhaserConfig = {
   type: Phaser.AUTO,
   roundPixels: false,
-  physics: { default: "arcade" },
+  physics: { default: 'arcade' },
   scene: {
     preload: onPreloadScene,
     create: onCreateScene,

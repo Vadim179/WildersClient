@@ -1,4 +1,4 @@
-import Phaser from "phaser"
+import Phaser from 'phaser'
 import {
   CookedRabbitMeatItem,
   CopperItem,
@@ -8,7 +8,7 @@ import {
   RawRabbitMeatItem,
   StoneItem,
   WoodItem,
-} from "./Items.Config"
+} from './Items.Config'
 
 export const StarterInventoryItems = [
   { item: new WoodItem(), count: 1000 },
@@ -22,13 +22,19 @@ export const StarterInventoryItems = [
 ]
 
 export const ColorPallete = {
-  BACKGROUND: "#9AB855",
+  BACKGROUND: '#9AB855',
 }
 
-export function initKeyboardInput() {
+export function doInitializeKeys() {
+  const Keys = {}
+
+  const Keyboard = this.input.keyboard
   const KeyCodes = Phaser.Input.Keyboard.KeyCodes
-  this.W = this.input.keyboard.addKey(KeyCodes.W)
-  this.A = this.input.keyboard.addKey(KeyCodes.A)
-  this.S = this.input.keyboard.addKey(KeyCodes.S)
-  this.D = this.input.keyboard.addKey(KeyCodes.D)
+
+  Keys.W = Keyboard.addKey(KeyCodes.W)
+  Keys.A = Keyboard.addKey(KeyCodes.A)
+  Keys.S = Keyboard.addKey(KeyCodes.S)
+  Keys.D = Keyboard.addKey(KeyCodes.D)
+
+  this.Keys = Keys
 }

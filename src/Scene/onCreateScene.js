@@ -1,13 +1,20 @@
-import * as Prefabs from "Config/Prefabs.Config"
-import { initKeyboardInput } from "Config/Game.Config"
-import { InventoryGUI } from "GUI"
+import * as Prefabs from 'Config/Prefabs.Config'
+import { doInitializeKeys } from 'Config/Game.Config'
+import { InventoryGUI } from 'GUI'
+import {
+  MovementControls,
+  RotationControls,
+} from 'Controls'
 
 function onCreateScene() {
   this.player = new Prefabs.Player(this, 0, 0)
   this.camera = new Prefabs.Camera(this, 0, 0)
   this.camera.startFollow(this.player)
 
-  initKeyboardInput.call(this)
+  doInitializeKeys.call(this)
+  MovementControls.doStreamPosition.call(this)
+  RotationControls.doStreamAngle.call(this)
+
   new InventoryGUI(this)
 
   new Prefabs.LargeHill(this, 0, 0)
