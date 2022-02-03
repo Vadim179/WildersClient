@@ -16,7 +16,9 @@ export function IOProvider({ children }) {
   const [socket, setSocket] = useState(null)
 
   useEffect(() => {
-    const socket = io(process.env.REACT_APP_SERVER_URL)
+    const socket = io(process.env.REACT_APP_SERVER_URL, {
+      transports: ['websocket'],
+    })
     socket.on('connect', () => setSocket(socket))
     return () => socket.off()
   }, [])

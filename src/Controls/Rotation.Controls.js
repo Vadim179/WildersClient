@@ -24,19 +24,3 @@ export function doRotatePlayer() {
 
   player.setRotation(angle - 1.5)
 }
-
-/**
- * Sends the player's angle to the server 30 times per second.
- * This method should be invoked once the scene is created.
- */
-export function doStreamAngle() {
-  const { player } = this
-  let _previousAngle = 0
-
-  setInterval(() => {
-    if (_previousAngle !== player.angle) {
-      _previousAngle = player.angle
-      // TODO: EMIT ANGLE TO SERVER
-    }
-  }, 1000 / 10)
-}
