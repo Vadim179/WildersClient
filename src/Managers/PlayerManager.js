@@ -9,6 +9,11 @@ export class PlayerManager extends BaseManager {
 
   _doSetup() {
     this.doUpdatePlayer()
+
+    this.socket.on('user left', ({ ID }) => {
+      this.handlePlayerLeft(ID)
+    })
+
     this.socket.on('room update', updates => {
       this.handleRoomUpdates(updates)
     })
@@ -62,5 +67,10 @@ export class PlayerManager extends BaseManager {
       player.setUsername(username)
       this.store._setItem(ID, player)
     })
+  }
+
+  handlePlayerLeft(ID) {
+    const player = this.store._getItem(ID)
+    player?.destroy()
   }
 }
