@@ -1,12 +1,27 @@
 import * as Prefabs from 'Config/Prefabs.Config'
-import { doInitializeKeys } from 'Config/Game.Config'
 import { InventoryGUI } from 'GUI'
+import {
+  GameManager,
+  RoomManager,
+  TimeManager,
+  MobManager,
+  PlayerManager,
+  ResourceManager,
+  InputManager,
+} from 'Managers'
 
 function onCreateScene() {
   this.player = new Prefabs.Player(this, 0, 0)
   this.cameras.main.startFollow(this.player)
 
-  doInitializeKeys.call(this)
+  new GameManager(this.socket, this)
+    .addManager(RoomManager)
+    .addManager(InputManager)
+    .addManager(PlayerManager)
+    .addManager(ResourceManager)
+    .addManager(TimeManager)
+    .addManager(MobManager)
+
   new InventoryGUI(this)
 
   new Prefabs.LargeHill(this, 0, 0)

@@ -18,6 +18,16 @@ export class Player extends PhysicsSprite {
     this._setCollider()
   }
 
+  /**
+   * @param {String} username
+   * @returns {Player}
+   */
+  setUsername(username) {
+    validate('S', arguments)
+    this.username = username
+    return this
+  }
+
   _setCollider() {
     this.body.setCircle(35)
   }

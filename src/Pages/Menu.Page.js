@@ -37,10 +37,10 @@ function MenuPage() {
   }
 
   useEffect(() => {
-    socket.emit('getRooms')
+    socket.emit('get rooms')
     socket.once('rooms', rooms => {
       setRooms(rooms)
-      setRoomID(rooms[0].ID)
+      setRoomID(rooms[0])
     })
   }, [])
 
@@ -63,9 +63,9 @@ function MenuPage() {
           onChange={e => setRoomID(e.target.value)}
           className={`${c}__user-menu-rooms-select`}
         >
-          {rooms.map(({ ID, name }) => (
-            <option key={ID} value={ID}>
-              {name}
+          {rooms.map(room => (
+            <option key={room} value={room}>
+              {room}
             </option>
           ))}
         </select>
