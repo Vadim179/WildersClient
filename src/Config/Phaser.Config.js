@@ -11,7 +11,13 @@ const PhaserConfig = ({ socket }) => ({
   version: '1.0.0',
   // disableContextMenu: true,
   backgroundColor: '#9ab855',
-  physics: { default: 'arcade' },
+  physics: {
+    default: 'arcade',
+    arcade: {
+      fps: 60,
+      fixedStep: false,
+    },
+  },
   render: {
     antialias: true,
     roundPixels: true,

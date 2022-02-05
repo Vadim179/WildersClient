@@ -30,6 +30,13 @@ export class Player extends PhysicsSprite {
 
   _setCollider() {
     this.body.setCircle(35)
+    this.body.setCollideWorldBounds(true)
+
+    const bodies = this.scene.physics.world.bodies.entries
+    bodies.forEach(({ gameObject }) => {
+      if (gameObject instanceof Player) return
+      this.scene.physics.add.collider(gameObject, this)
+    })
   }
 }
 
@@ -56,10 +63,8 @@ export class SmallTree extends PhysicsSprite {
   }
 
   _setCollider() {
-    const { scene, body } = this
-    body.setImmovable()
-    body.setCircle(30, 60, 40)
-    scene.physics.add.collider(scene.player, this)
+    this.body.setImmovable()
+    this.body.setCircle(30, 60, 40)
   }
 }
 
@@ -76,10 +81,8 @@ export class SmallDarkTree extends PhysicsSprite {
   }
 
   _setCollider() {
-    const { scene, body } = this
-    body.setImmovable()
-    body.setCircle(30, 60, 40)
-    scene.physics.add.collider(scene.player, this)
+    this.body.setImmovable()
+    this.body.setCircle(30, 60, 40)
   }
 }
 
@@ -96,10 +99,8 @@ export class MediumTree extends PhysicsSprite {
   }
 
   _setCollider() {
-    const { scene, body } = this
-    body.setImmovable()
-    body.setCircle(50, 100, 60)
-    scene.physics.add.collider(scene.player, this)
+    this.body.setImmovable()
+    this.body.setCircle(50, 100, 60)
   }
 }
 
@@ -116,10 +117,8 @@ export class MediumDarkTree extends PhysicsSprite {
   }
 
   _setCollider() {
-    const { scene, body } = this
-    body.setImmovable()
-    body.setCircle(50, 100, 60)
-    scene.physics.add.collider(scene.player, this)
+    this.body.setImmovable()
+    this.body.setCircle(50, 100, 60)
   }
 }
 
@@ -136,10 +135,8 @@ export class LargeTree extends PhysicsSprite {
   }
 
   _setCollider() {
-    const { scene, body } = this
-    body.setImmovable()
-    body.setCircle(60, 150, 100)
-    scene.physics.add.collider(scene.player, this)
+    this.body.setImmovable()
+    this.body.setCircle(60, 150, 100)
   }
 }
 
@@ -156,10 +153,8 @@ export class LargeDarkTree extends PhysicsSprite {
   }
 
   _setCollider() {
-    const { scene, body } = this
-    body.setImmovable()
-    body.setCircle(60, 150, 100)
-    scene.physics.add.collider(scene.player, this)
+    this.body.setImmovable()
+    this.body.setCircle(60, 150, 100)
   }
 }
 
@@ -307,10 +302,8 @@ export class LargeCopper extends PhysicsSprite {
   }
 
   _setCollider() {
-    const { scene, body } = this
-    body.setImmovable()
-    body.setCircle(65, 5, 10)
-    scene.physics.add.collider(scene.player, this)
+    this.body.setImmovable()
+    this.body.setCircle(65, 5, 10)
   }
 }
 
@@ -327,10 +320,8 @@ export class SmallCopper extends PhysicsSprite {
   }
 
   _setCollider() {
-    const { scene, body } = this
-    body.setImmovable()
-    body.setCircle(50, 5, 10)
-    scene.physics.add.collider(scene.player, this)
+    this.body.setImmovable()
+    this.body.setCircle(50, 5, 10)
   }
 }
 
@@ -347,10 +338,8 @@ export class LargeGold extends PhysicsSprite {
   }
 
   _setCollider() {
-    const { scene, body } = this
-    body.setImmovable()
-    body.setCircle(65, 5, 10)
-    scene.physics.add.collider(scene.player, this)
+    this.body.setImmovable()
+    this.body.setCircle(65, 5, 10)
   }
 }
 
@@ -367,10 +356,8 @@ export class SmallGold extends PhysicsSprite {
   }
 
   _setCollider() {
-    const { scene, body } = this
-    body.setImmovable()
-    body.setCircle(50, 5, 10)
-    scene.physics.add.collider(scene.player, this)
+    this.body.setImmovable()
+    this.body.setCircle(50, 5, 10)
   }
 }
 
@@ -387,10 +374,8 @@ export class LargeIron extends PhysicsSprite {
   }
 
   _setCollider() {
-    const { scene, body } = this
-    body.setImmovable()
-    body.setCircle(65, 5, 10)
-    scene.physics.add.collider(scene.player, this)
+    this.body.setImmovable()
+    this.body.setCircle(65, 5, 10)
   }
 }
 
@@ -407,10 +392,8 @@ export class SmallIron extends PhysicsSprite {
   }
 
   _setCollider() {
-    const { scene, body } = this
-    body.setImmovable()
-    body.setCircle(50, 5, 10)
-    scene.physics.add.collider(scene.player, this)
+    this.body.setImmovable()
+    this.body.setCircle(50, 5, 10)
   }
 }
 
@@ -427,10 +410,8 @@ export class LargeRock extends PhysicsSprite {
   }
 
   _setCollider() {
-    const { scene, body } = this
-    body.setImmovable()
-    body.setCircle(65, 5, 10)
-    scene.physics.add.collider(scene.player, this)
+    this.body.setImmovable()
+    this.body.setCircle(65, 5, 10)
   }
 }
 
@@ -447,9 +428,7 @@ export class SmallRock extends PhysicsSprite {
   }
 
   _setCollider() {
-    const { scene, body } = this
-    body.setImmovable()
-    body.setCircle(50, 5, 10)
-    scene.physics.add.collider(scene.player, this)
+    this.body.setImmovable()
+    this.body.setCircle(50, 5, 10)
   }
 }

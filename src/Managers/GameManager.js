@@ -13,4 +13,15 @@ export class GameManager extends BaseManager {
     this.managers.push(manager)
     return this
   }
+
+  _doSetup() {
+    const WORLD_SIZE = 1000
+
+    const x = -WORLD_SIZE / 2
+    const y = -WORLD_SIZE / 2
+    const sizeX = WORLD_SIZE
+    const sizeY = WORLD_SIZE
+
+    this.scene.physics.world.setBounds(x, y, sizeX, sizeY)
+  }
 }

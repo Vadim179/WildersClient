@@ -11,17 +11,6 @@ import {
 } from 'Managers'
 
 function onCreateScene() {
-  this.player = new Prefabs.Player(this, 0, 0)
-  this.cameras.main.startFollow(this.player)
-
-  new GameManager(this.socket, this)
-    .addManager(RoomManager)
-    .addManager(InputManager)
-    .addManager(PlayerManager)
-    .addManager(ResourceManager)
-    .addManager(TimeManager)
-    .addManager(MobManager)
-
   new InventoryGUI(this)
 
   new Prefabs.LargeHill(this, 0, 0)
@@ -41,6 +30,17 @@ function onCreateScene() {
 
   new Prefabs.SmallRock(this, 200, 120)
   new Prefabs.LargeGold(this, 100, 200)
+
+  this.player = new Prefabs.Player(this, 0, 0)
+  this.cameras.main.startFollow(this.player)
+
+  new GameManager(this.socket, this)
+    .addManager(RoomManager)
+    .addManager(InputManager)
+    .addManager(PlayerManager)
+    .addManager(ResourceManager)
+    .addManager(TimeManager)
+    .addManager(MobManager)
 }
 
 export default onCreateScene

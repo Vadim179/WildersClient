@@ -1,11 +1,7 @@
-import {
-  RotationControls,
-  MovementControls,
-} from 'Controls'
+import { RotationControls } from 'Controls'
 
-function onUpdateScene() {
-  RotationControls.doRotatePlayer.call(this)
-  MovementControls.doMovePlayer.call(this)
+function onUpdateScene(time, delta) {
+  RotationControls.doRotatePlayer.call(this, delta)
 }
 
 export default onUpdateScene

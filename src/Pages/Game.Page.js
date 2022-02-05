@@ -11,7 +11,7 @@ function GamePage() {
 
   useEffect(() => {
     new Phaser.Game(PhaserConfig({ socket }))
-    return () => socket.emit('user left')
+    return () => socket.emit('leave room')
   }, [])
 
   return null
