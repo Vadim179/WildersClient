@@ -32,7 +32,7 @@ function onCreateScene() {
   new Prefabs.LargeGold(this, 100, 200)
 
   this.player = new Prefabs.Player(this, 0, 0)
-  this.cameras.main.startFollow(this.player)
+  this.cameras.main.startFollow(this.player, false, 0.025, 0.025)
 
   new GameManager(this.socket, this)
     .addManager(RoomManager)

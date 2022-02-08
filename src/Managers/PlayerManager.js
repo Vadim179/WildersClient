@@ -4,13 +4,17 @@ import { PlayerStore } from 'Stores'
 
 export class PlayerManager extends BaseManager {
   _doSetupStore() {
+    const { scene, socket } = this
     this.store = new PlayerStore()
+    this.store._setItem(socket.id, scene.player)
   }
 
   _doSetup() {
-    this.doUpdatePlayer()
+    this.doEmitPlayerRotation()
+    this.doEmitPlayerPosition()
+    this.doEmitPlayerMovement()
 
-    this.socket.on('user left', ({ ID }) => {
+    this.socket.on('player left', ({ ID }) => {
       this.handlePlayerLeft(ID)
     })
 
@@ -19,53 +23,93 @@ export class PlayerManager extends BaseManager {
     })
   }
 
-  // Update frequency per second
-  UPDATE_FREQ = 30
+  doEmitPlayerRotation() {
+    const { player } = this.scene
+    let rotation = 0
 
-  LAST_PLAYER_X = 0
-  LAST_PLAYER_Y = 0
-  LAST_PLAYER_A = 0
+    setInterval(() => {
+      if (rotation !== player.rotation) {
+        rotation = player.rotation
+        this.socket.emit('update rotation', { rotation })
+      }
+    }, 1000 / 60)
+  }
 
-  doUpdatePlayer() {
+  doEmitPlayerPosition() {
     const { player } = this.scene
 
     setInterval(() => {
-      const shouldUpdate =
-        player.x !== this.LAST_PLAYER_X ||
-        player.y !== this.LAST_PLAYER_Y ||
-        player.angle !== this.LAST_PLAYER_A
+      this.socket.emit('update position', {
+        posX: player.x,
+        posY: player.y,
+      })
+    }, 1000 / 20)
+  }
 
-      if (shouldUpdate) {
-        this.LAST_PLAYER_X = player.x
-        this.LAST_PLAYER_Y = player.y
-        this.LAST_PLAYER_A = player.angle
+  doEmitPlayerMovement() {
+    const { Keys } = this.scene
+    const { W, A, S, D } = Keys
 
-        this.socket.emit('update', {
-          x: this.LAST_PLAYER_X,
-          y: this.LAST_PLAYER_Y,
-          a: this.LAST_PLAYER_A,
-        })
-      }
-    }, 1000 / this.UPDATE_FREQ)
+    let x = 0
+    let y = 0
+
+    Object.values(Keys).forEach(key => {
+      key.on('down', () => {
+        if (key === D) x = 1
+        if (key === S) y = 1
+        if (key === W) y = -1
+        if (key === A) x = -1
+        this.socket.emit('update movement', { x, y })
+      })
+
+      key.on('up', () => {
+        if (key === A) x = D.isDown ? 1 : 0
+        if (key === S) y = W.isDown ? -1 : 0
+        if (key === W) y = S.isDown ? 1 : 0
+        if (key === D) x = A.isDown ? -1 : 0
+        this.socket.emit('update movement', { x, y })
+      })
+    })
   }
 
   handleRoomUpdates(updates) {
-    const mySocketID = this.socket.id
+    const speed = 150
 
     Object.entries(updates).forEach(([ID, data]) => {
-      if (ID === mySocketID) return
-      const { x, y, a, username } = data
+      const { x, y, rotation, posX, posY, username } = data
 
       if (this.store._hasItem(ID)) {
         const player = this.store._getItem(ID)
-        player.setPosition(x, y)
-        player.setAngle(a)
+
+        if (ID !== this.socket.id) {
+          player.setRotation(rotation)
+
+          if (
+            player.x - posX > 50 ||
+            player.y - posY > 50 ||
+            player.x - posX < -50 ||
+            player.y - posY < -50
+          ) {
+            player.setPosition(posX, posY)
+          }
+        }
+
+        let xVelocity = x * speed
+        let yVelocity = y * speed
+
+        if (x !== 0 && y !== 0) {
+          xVelocity = (x * speed) / Math.sqrt(2)
+          yVelocity = (y * speed) / Math.sqrt(2)
+        }
+
+        player.body?.setVelocityX(xVelocity || 0)
+        player.body?.setVelocityY(yVelocity || 0)
         return
       }
 
-      const player = new Player(this.scene, x, y)
+      const player = new Player(this.scene, posX, posY)
       player.setUsername(username)
-      player.setAngle(a)
+      player.setRotation(rotation)
       this.store._setItem(ID, player)
     })
   }
