@@ -1,6 +1,6 @@
-import validate from "aproba"
-import { Sprite } from "Config/Objects.Config"
-import { ImageGUI, TextGUI } from "GUI"
+import validate from 'aproba'
+import { Sprite } from 'Config/Objects.Config'
+import { ImageGUI, TextGUI } from 'GUI'
 
 class InventorySlotGUI extends Sprite {
   /**
@@ -9,8 +9,8 @@ class InventorySlotGUI extends Sprite {
    * @param {number} y
    */
   constructor(scene, x, y) {
-    validate("ONN", arguments)
-    super(scene, x, y, "INVENTORY_SLOT")
+    validate('ONN', arguments)
+    super(scene, x, y, 'INVENTORY_SLOT')
 
     this.setScrollFactor(0)
     this.setDepth(100)
@@ -21,6 +21,9 @@ class InventorySlotGUI extends Sprite {
     this.count = 0
 
     this.text = new TextGUI(scene, x, y + 10)
+    this.text.setScrollFactor(0)
+    this.text.setDepth(200)
+
     this.icon = new ImageGUI(scene, x, y)
     this.icon.setScale(0.7)
 
@@ -32,7 +35,7 @@ class InventorySlotGUI extends Sprite {
    * @param {number} count
    */
   addItem(item, count) {
-    validate("ON", arguments)
+    validate('ON', arguments)
 
     this.count += count
     if (this.item === null) {
@@ -47,7 +50,7 @@ class InventorySlotGUI extends Sprite {
    * @param {number} count
    */
   removeItem(count) {
-    validate("N", arguments)
+    validate('N', arguments)
 
     this.count -= count
     if (this.count <= 0) {
@@ -73,15 +76,15 @@ class InventorySlotGUI extends Sprite {
       return
     }
 
-    icon.setTexture("")
+    icon.setTexture('')
     icon.setAlpha(0)
   }
 
   _updateText() {
     const { x, text, count } = this
 
-    if (count > 999) text.setText("x999+")
-    else text.setText("x" + count)
+    if (count > 999) text.setText('x999+')
+    else text.setText('x' + count)
 
     const length = text.text.length
     text.setX(x + 30 - length * 8.5)

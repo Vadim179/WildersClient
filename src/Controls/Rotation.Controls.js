@@ -15,12 +15,6 @@ export function doRotatePlayer() {
   const playerX = player.x
   const playerY = player.y
 
-  const angle = Phaser.Math.Angle.Between(
-    playerX,
-    playerY,
-    mouseX,
-    mouseY
-  )
-
+  const angle = Phaser.Math.Angle.Between(playerX, playerY, mouseX, mouseY)
   player.setRotation(angle - 1.5)
 }

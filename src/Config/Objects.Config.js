@@ -1,5 +1,5 @@
-import Phaser from "phaser"
-import validate from "aproba"
+import Phaser from 'phaser'
+import validate from 'aproba'
 
 export class Sprite extends Phaser.GameObjects.Sprite {
   /**
@@ -9,7 +9,7 @@ export class Sprite extends Phaser.GameObjects.Sprite {
    * @param {string} texture
    */
   constructor(scene, x, y, texture) {
-    validate("ONNS", arguments)
+    validate('ONNS', arguments)
     super(scene, x, y, texture)
     this._addToScene()
   }
@@ -27,7 +27,7 @@ export class PhysicsSprite extends Sprite {
    * @param {string} texture
    */
   constructor(scene, x, y, texture) {
-    validate("ONNS", arguments)
+    validate('ONNS', arguments)
     super(scene, x, y, texture)
     this._doEnablePhysics()
     this._setCollider()

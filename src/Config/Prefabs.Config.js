@@ -1,9 +1,5 @@
 import validate from 'aproba'
-
-import {
-  Sprite,
-  PhysicsSprite,
-} from 'Config/Objects.Config'
+import { Sprite, PhysicsSprite } from 'Config/Objects.Config'
 
 export class Player extends PhysicsSprite {
   /**
@@ -14,18 +10,9 @@ export class Player extends PhysicsSprite {
   constructor(scene, x, y) {
     validate('ONN', arguments)
     super(scene, x, y, 'PLAYER_BODY')
+
     this.setDepth(25)
     this._setCollider()
-  }
-
-  /**
-   * @param {String} username
-   * @returns {Player}
-   */
-  setUsername(username) {
-    validate('S', arguments)
-    this.username = username
-    return this
   }
 
   _setCollider() {

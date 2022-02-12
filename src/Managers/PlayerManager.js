@@ -108,7 +108,6 @@ export class PlayerManager extends BaseManager {
       }
 
       const player = new Player(this.scene, posX, posY)
-      player.setUsername(username)
       player.setRotation(rotation)
       this.store._setItem(ID, player)
     })
