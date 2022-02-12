@@ -76,7 +76,7 @@ export class PlayerManager extends BaseManager {
     const speed = 150
 
     Object.entries(updates).forEach(([ID, data]) => {
-      const { x, y, rotation, posX, posY, username } = data
+      const { x, y, rotation, posX, posY } = data
 
       if (this.store._hasItem(ID)) {
         const player = this.store._getItem(ID)

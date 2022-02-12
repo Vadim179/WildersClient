@@ -17,6 +17,19 @@ export class Sprite extends Phaser.GameObjects.Sprite {
   _addToScene() {
     this.scene.add.existing(this)
   }
+
+  _setShadow() {
+    const { scene, x, y, texture } = this
+    const shadow = new Phaser.GameObjects.Sprite(scene, x, y, texture)
+
+    shadow.setTint(0x000000)
+    shadow.setAlpha(0.25)
+    shadow.setScale(1, 1)
+    shadow.setPosition(this.x + 10, this.y + 10)
+    shadow.setDepth(this.depth - 1)
+
+    this.scene.add.existing(shadow)
+  }
 }
 
 export class PhysicsSprite extends Sprite {

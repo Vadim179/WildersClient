@@ -47,6 +47,7 @@ export class SmallTree extends PhysicsSprite {
     validate('ONN', arguments)
     super(scene, x, y, 'SMALL_TREE')
     this.setDepth(30)
+    this._setShadow()
   }
 
   _setCollider() {
@@ -65,6 +66,7 @@ export class SmallDarkTree extends PhysicsSprite {
     validate('ONN', arguments)
     super(scene, x, y, 'SMALL_DARK_TREE')
     this.setDepth(30)
+    this._setShadow()
   }
 
   _setCollider() {
@@ -83,6 +85,7 @@ export class MediumTree extends PhysicsSprite {
     validate('ONN', arguments)
     super(scene, x, y, 'MEDIUM_TREE')
     this.setDepth(40)
+    this._setShadow()
   }
 
   _setCollider() {
@@ -101,6 +104,7 @@ export class MediumDarkTree extends PhysicsSprite {
     validate('ONN', arguments)
     super(scene, x, y, 'MEDIUM_DARK_TREE')
     this.setDepth(40)
+    this._setShadow()
   }
 
   _setCollider() {
@@ -119,6 +123,7 @@ export class LargeTree extends PhysicsSprite {
     validate('ONN', arguments)
     super(scene, x, y, 'LARGE_TREE')
     this.setDepth(50)
+    this._setShadow()
   }
 
   _setCollider() {
@@ -137,6 +142,7 @@ export class LargeDarkTree extends PhysicsSprite {
     validate('ONN', arguments)
     super(scene, x, y, 'LARGE_DARK_TREE')
     this.setDepth(50)
+    this._setShadow()
   }
 
   _setCollider() {
@@ -286,6 +292,7 @@ export class LargeCopper extends PhysicsSprite {
     validate('ONN', arguments)
     super(scene, x, y, 'LARGE_COPPER')
     this.setDepth(20)
+    this._setShadow()
   }
 
   _setCollider() {
@@ -304,6 +311,7 @@ export class SmallCopper extends PhysicsSprite {
     validate('ONN', arguments)
     super(scene, x, y, 'SMALL_COPPER')
     this.setDepth(10)
+    this._setShadow()
   }
 
   _setCollider() {
@@ -322,6 +330,7 @@ export class LargeGold extends PhysicsSprite {
     validate('ONN', arguments)
     super(scene, x, y, 'LARGE_GOLD')
     this.setDepth(20)
+    this._setShadow()
   }
 
   _setCollider() {
@@ -340,6 +349,7 @@ export class SmallGold extends PhysicsSprite {
     validate('ONN', arguments)
     super(scene, x, y, 'SMALL_GOLD')
     this.setDepth(10)
+    this._setShadow()
   }
 
   _setCollider() {
@@ -358,6 +368,7 @@ export class LargeIron extends PhysicsSprite {
     validate('ONN', arguments)
     super(scene, x, y, 'LARGE_IRON')
     this.setDepth(20)
+    this._setShadow()
   }
 
   _setCollider() {
@@ -376,6 +387,7 @@ export class SmallIron extends PhysicsSprite {
     validate('ONN', arguments)
     super(scene, x, y, 'SMALL_IRON')
     this.setDepth(10)
+    this._setShadow()
   }
 
   _setCollider() {
@@ -394,6 +406,7 @@ export class LargeRock extends PhysicsSprite {
     validate('ONN', arguments)
     super(scene, x, y, 'LARGE_ROCK')
     this.setDepth(20)
+    this._setShadow()
   }
 
   _setCollider() {
@@ -412,6 +425,7 @@ export class SmallRock extends PhysicsSprite {
     validate('ONN', arguments)
     super(scene, x, y, 'SMALL_ROCK')
     this.setDepth(10)
+    this._setShadow()
   }
 
   _setCollider() {
